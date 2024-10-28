@@ -25,7 +25,7 @@ func (s *Start) Description() string {
 
 func (s *Start) Handle(ctx tb.Context) error {
 	log.Infof("/start id: %d", ctx.Chat().ID)
-	return ctx.Send(fmt.Sprintf("你好，欢迎使用flowerss。"))
+	return ctx.Send(fmt.Sprintf("QWQ？"))
 }
 
 func (s *Start) Middlewares() []tb.MiddlewareFunc {
