@@ -4,6 +4,9 @@ on:
   release:
     types: [created]
 
+env: 
+    CGO_ENABLED: 1
+
 jobs:
   linux-releases-matrix:
     name: Release Matrix
@@ -30,5 +33,4 @@ jobs:
           goarch: ${{ matrix.goarch }}
           build_flags: -v 
           ldflags: -X 'github.com/bGlzdGRlcg/rssbot/internal/config.commit=${{ github.sha }}' -X 'github.com/bGlzdGRlcg/rssbot/internal/config.date=${{ env.BUILD_TIME }}' -X 'github.com/bGlzdGRlcg/rssbot/internal/config.version=${{ env.APP_VERSION }}'
-          env: 
-              CGO_ENABLED: 1
+          
