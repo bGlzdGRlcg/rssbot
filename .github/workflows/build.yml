@@ -1,6 +1,5 @@
-name: Go
-
 on: [workflow_dispatch]
+name: Go
   
 jobs:
   build_release:
