@@ -33,5 +33,5 @@ jobs:
           goarch: ${{ matrix.goarch }}
           build_flags: -v 
           ldflags: -X 'github.com/bGlzdGRlcg/rssbot/internal/config.commit=${{ github.sha }}' -X 'github.com/bGlzdGRlcg/rssbot/internal/config.date=${{ env.BUILD_TIME }}' -X 'github.com/bGlzdGRlcg/rssbot/internal/config.version=${{ env.APP_VERSION }}'
-          pre_command: "sudo apt-get install gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu -y"
+          pre_command: "sudo apt-get update && sudo apt-get install -y build-essential"
           
