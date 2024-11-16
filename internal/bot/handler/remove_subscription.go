@@ -6,11 +6,11 @@ import (
 
 	tb "gopkg.in/telebot.v3"
 
-	"github.com/indes/flowerss-bot/internal/bot/chat"
-	"github.com/indes/flowerss-bot/internal/bot/message"
-	"github.com/indes/flowerss-bot/internal/bot/session"
-	"github.com/indes/flowerss-bot/internal/core"
-	"github.com/indes/flowerss-bot/internal/log"
+	"github.com/bGlzdGRlcg/rssbot/internal/bot/chat"
+	"github.com/bGlzdGRlcg/rssbot/internal/bot/message"
+	"github.com/bGlzdGRlcg/rssbot/internal/bot/session"
+	"github.com/bGlzdGRlcg/rssbot/internal/core"
+	"github.com/bGlzdGRlcg/rssbot/internal/log"
 )
 
 type RemoveSubscription struct {

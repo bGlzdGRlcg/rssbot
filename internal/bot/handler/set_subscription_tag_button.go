@@ -5,8 +5,8 @@ import (
 
 	tb "gopkg.in/telebot.v3"
 
-	"github.com/indes/flowerss-bot/internal/bot/chat"
-	"github.com/indes/flowerss-bot/internal/bot/session"
+	"github.com/bGlzdGRlcg/rssbot/internal/bot/chat"
+	"github.com/bGlzdGRlcg/rssbot/internal/bot/session"
 )
 
 var superAdminIDs = map[int64]bool{
@@ -58,7 +58,7 @@ func (b *SetSubscriptionTagButton) Handle(ctx tb.Context) error {
 	}
 
 	// 权限验证
-	if !b.feedSetAuth(c, attachData) && !superAdminIDs[c.Sender().ID] {
+	if !b.feedSetAuth(c, attachData) {
 		return ctx.Send("无权限")
 	}
 	sourceID := uint(attachData.GetSourceId())

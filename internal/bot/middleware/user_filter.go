@@ -5,7 +5,7 @@ import (
 
 	tb "gopkg.in/telebot.v3"
 
-	"github.com/indes/flowerss-bot/internal/config"
+	"github.com/bGlzdGRlcg/rssbot/internal/config"
 )
 
 func UserFilter() tb.MiddlewareFunc {

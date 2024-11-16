@@ -7,10 +7,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/indes/flowerss-bot/internal/bot/session"
-	"github.com/indes/flowerss-bot/internal/core"
-	"github.com/indes/flowerss-bot/internal/log"
-	"github.com/indes/flowerss-bot/internal/opml"
+	"github.com/bGlzdGRlcg/rssbot/internal/bot/session"
+	"github.com/bGlzdGRlcg/rssbot/internal/core"
+	"github.com/bGlzdGRlcg/rssbot/internal/log"
+	"github.com/bGlzdGRlcg/rssbot/internal/opml"
 
 	tb "gopkg.in/telebot.v3"
 )

@@ -13,13 +13,13 @@ import (
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 
-	"github.com/indes/flowerss-bot/internal/config"
-	"github.com/indes/flowerss-bot/internal/feed"
-	"github.com/indes/flowerss-bot/internal/log"
-	"github.com/indes/flowerss-bot/internal/model"
-	"github.com/indes/flowerss-bot/internal/preview"
-	"github.com/indes/flowerss-bot/internal/storage"
-	"github.com/indes/flowerss-bot/pkg/client"
+	"github.com/bGlzdGRlcg/rssbot/internal/config"
+	"github.com/bGlzdGRlcg/rssbot/internal/feed"
+	"github.com/bGlzdGRlcg/rssbot/internal/log"
+	"github.com/bGlzdGRlcg/rssbot/internal/model"
+	"github.com/bGlzdGRlcg/rssbot/internal/preview"
+	"github.com/bGlzdGRlcg/rssbot/internal/storage"
+	"github.com/bGlzdGRlcg/rssbot/pkg/client"
 )
 
 var (

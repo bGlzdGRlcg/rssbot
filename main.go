@@ -5,10 +5,10 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/indes/flowerss-bot/internal/bot"
-	"github.com/indes/flowerss-bot/internal/core"
-	"github.com/indes/flowerss-bot/internal/log"
-	"github.com/indes/flowerss-bot/internal/scheduler"
+	"github.com/bGlzdGRlcg/rssbot/internal/bot"
+	"github.com/bGlzdGRlcg/rssbot/internal/core"
+	"github.com/bGlzdGRlcg/rssbot/internal/log"
+	"github.com/bGlzdGRlcg/rssbot/internal/scheduler"
 )
 
 func main() {

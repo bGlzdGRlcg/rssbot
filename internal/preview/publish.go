@@ -7,7 +7,7 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/indes/flowerss-bot/internal/log"
+	"github.com/bGlzdGRlcg/rssbot/internal/log"
 )
 
 func PublishHtml(sourceTitle string, title string, rawLink string, htmlContent string) (string, error) {

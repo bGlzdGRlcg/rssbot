@@ -1,8 +1,8 @@
 package tgraph
 
 import (
-	"github.com/indes/flowerss-bot/internal/config"
-	"github.com/indes/flowerss-bot/internal/log"
+	"github.com/bGlzdGRlcg/rssbot/internal/config"
+	"github.com/bGlzdGRlcg/rssbot/internal/log"
 
 	"github.com/indes/telegraph-go"
 )

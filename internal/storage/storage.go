@@ -6,7 +6,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/indes/flowerss-bot/internal/model"
+	"github.com/bGlzdGRlcg/rssbot/internal/model"
 )
 
 var (

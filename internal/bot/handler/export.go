@@ -10,11 +10,11 @@ import (
 	"go.uber.org/zap"
 	tb "gopkg.in/telebot.v3"
 
-	"github.com/indes/flowerss-bot/internal/bot/message"
-	"github.com/indes/flowerss-bot/internal/core"
-	"github.com/indes/flowerss-bot/internal/log"
-	"github.com/indes/flowerss-bot/internal/model"
-	"github.com/indes/flowerss-bot/internal/opml"
+	"github.com/bGlzdGRlcg/rssbot/internal/bot/message"
+	"github.com/bGlzdGRlcg/rssbot/internal/core"
+	"github.com/bGlzdGRlcg/rssbot/internal/log"
+	"github.com/bGlzdGRlcg/rssbot/internal/model"
+	"github.com/bGlzdGRlcg/rssbot/internal/opml"
 )
 
 type Export struct {

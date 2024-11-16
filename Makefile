@@ -11,9 +11,9 @@ all: build
 build: get
 	go build -trimpath -ldflags \
 	"-s -w -buildid= \
-	-X 'github.com/indes/flowerss-bot/internal/config.commit=$(COMMIT)' \
-	-X 'github.com/indes/flowerss-bot/internal/config.date=$(DATA)' \
-	-X 'github.com/indes/flowerss-bot/internal/config.version=$(VERSION)'" -o $(app_name)
+	-X 'github.com/bGlzdGRlcg/rssbot/internal/config.commit=$(COMMIT)' \
+	-X 'github.com/bGlzdGRlcg/rssbot/internal/config.date=$(DATA)' \
+	-X 'github.com/bGlzdGRlcg/rssbot/internal/config.version=$(VERSION)'" -o $(app_name)
 
 get:
 	go mod download

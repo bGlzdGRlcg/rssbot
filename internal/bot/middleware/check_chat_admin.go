@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"github.com/indes/flowerss-bot/internal/bot/chat"
-	"github.com/indes/flowerss-bot/internal/bot/session"
+	"github.com/bGlzdGRlcg/rssbot/internal/bot/chat"
+	"github.com/bGlzdGRlcg/rssbot/internal/bot/session"
 
 	tb "gopkg.in/telebot.v3"
 )

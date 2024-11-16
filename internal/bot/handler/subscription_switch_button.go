@@ -7,10 +7,10 @@ import (
 
 	tb "gopkg.in/telebot.v3"
 
-	"github.com/indes/flowerss-bot/internal/bot/chat"
-	"github.com/indes/flowerss-bot/internal/bot/session"
-	"github.com/indes/flowerss-bot/internal/config"
-	"github.com/indes/flowerss-bot/internal/core"
+	"github.com/bGlzdGRlcg/rssbot/internal/bot/chat"
+	"github.com/bGlzdGRlcg/rssbot/internal/bot/session"
+	"github.com/bGlzdGRlcg/rssbot/internal/config"
+	"github.com/bGlzdGRlcg/rssbot/internal/core"
 )
 
 const (

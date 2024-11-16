@@ -8,9 +8,9 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/indes/flowerss-bot/internal/model"
-	"github.com/indes/flowerss-bot/internal/storage"
-	"github.com/indes/flowerss-bot/internal/storage/mock"
+	"github.com/bGlzdGRlcg/rssbot/internal/model"
+	"github.com/bGlzdGRlcg/rssbot/internal/storage"
+	"github.com/bGlzdGRlcg/rssbot/internal/storage/mock"
 )
 
 type mockStorage struct {

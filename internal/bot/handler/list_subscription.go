@@ -7,17 +7,12 @@ import (
 
 	tb "gopkg.in/telebot.v3"
 
-	"github.com/indes/flowerss-bot/internal/bot/chat"
-	"github.com/indes/flowerss-bot/internal/bot/message"
-	"github.com/indes/flowerss-bot/internal/core"
-	"github.com/indes/flowerss-bot/internal/log"
-	"github.com/indes/flowerss-bot/internal/model"
+	"github.com/bGlzdGRlcg/rssbot/internal/bot/chat"
+	"github.com/bGlzdGRlcg/rssbot/internal/bot/message"
+	"github.com/bGlzdGRlcg/rssbot/internal/core"
+	"github.com/bGlzdGRlcg/rssbot/internal/log"
+	"github.com/bGlzdGRlcg/rssbot/internal/model"
 )
-
-var superAdminIDs = map[int64]bool{
-	6012322301: true,
-	7405650419: true,
-}
 
 const (
 	MaxSubsSizePerPage = 50
@@ -41,7 +36,7 @@ func (l *ListSubscription) Description() string {
 
 func (l *ListSubscription) listChatSubscription(ctx tb.Context) error {
 	// private chat or group
-	if ctx.Chat().Type != tb.ChatPrivate && !chat.IsChatAdmin(ctx.Bot(), ctx.Chat(), ctx.Sender().ID) && !superAdminIDs[c.Sender().ID] {
+	if ctx.Chat().Type != tb.ChatPrivate && !chat.IsChatAdmin(ctx.Bot(), ctx.Chat(), ctx.Sender().ID) {
 		// 无权限
 		return ctx.Send("无权限")
 	}

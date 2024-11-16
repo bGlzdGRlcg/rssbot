@@ -8,12 +8,12 @@ import (
 	"github.com/mmcdole/gofeed"
 	"go.uber.org/atomic"
 
-	"github.com/indes/flowerss-bot/internal/config"
-	"github.com/indes/flowerss-bot/internal/core"
-	"github.com/indes/flowerss-bot/internal/feed"
-	"github.com/indes/flowerss-bot/internal/log"
-	"github.com/indes/flowerss-bot/internal/model"
-	"github.com/indes/flowerss-bot/pkg/client"
+	"github.com/bGlzdGRlcg/rssbot/internal/config"
+	"github.com/bGlzdGRlcg/rssbot/internal/core"
+	"github.com/bGlzdGRlcg/rssbot/internal/feed"
+	"github.com/bGlzdGRlcg/rssbot/internal/log"
+	"github.com/bGlzdGRlcg/rssbot/internal/model"
+	"github.com/bGlzdGRlcg/rssbot/pkg/client"
 )
 
 // RssUpdateObserver Rss Update observer

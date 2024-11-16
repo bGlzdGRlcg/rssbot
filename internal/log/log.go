@@ -3,7 +3,7 @@ package log
 import (
 	"strings"
 
-	"github.com/indes/flowerss-bot/internal/config"
+	"github.com/bGlzdGRlcg/rssbot/internal/config"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"

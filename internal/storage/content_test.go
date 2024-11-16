@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/indes/flowerss-bot/internal/model"
+	"github.com/bGlzdGRlcg/rssbot/internal/model"
 )
 
 func TestContentStorageImpl(t *testing.T) {

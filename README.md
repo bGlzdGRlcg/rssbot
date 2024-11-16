@@ -1,6 +1,6 @@
 # flowerss bot
 
-本项目基于 indes/flowerss-bot 修改
+本项目基于 bGlzdGRlcg/rssbot 修改
 
 [安装与使用文档](https://flowerss-bot.now.sh/)  
 

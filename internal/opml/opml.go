@@ -6,7 +6,7 @@ import (
 	"io"
 	"time"
 
-	"github.com/indes/flowerss-bot/internal/model"
+	"github.com/bGlzdGRlcg/rssbot/internal/model"
 )
 
 // OPML opml struct
