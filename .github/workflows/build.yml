@@ -1,9 +1,6 @@
 name: Go
 
-on: 
-  push:
-    tags:
-    - '*'
+on: [workflow_dispatch]
   
 jobs:
   build_release:
@@ -24,10 +21,8 @@ jobs:
         aarch64-linux-gnu-gcc --version
         CGO_ENABLED=1 GOOS=linux GOARCH=arm64 CC=aarch64-linux-gnu-gcc go build -o rssbot .
         
-    - name: upload
-      run: zip -r rssbot.zip rssbot
-    - uses: ncipollo/release-action@v1
-      with:
-        artifacts: "rssbot.zip,rssbot"
-        bodyFile: ""
-        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload Artifacts
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: rssbot
+          path: rssbot
