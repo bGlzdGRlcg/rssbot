@@ -20,8 +20,7 @@ jobs:
         aarch64-linux-gnu-gcc --version
         CGO_ENABLED=1 GOOS=linux GOARCH=arm64 CC=aarch64-linux-gnu-gcc go build -o rssbot .
         
-    - name: Upload Artifacts
-        uses: actions/upload-artifact@v3.1.2
+    - uses: actions/upload-artifact@master
         with:
-          name: rssbot
-          path: rssbot
+            name: rss
+            path: rssbot
