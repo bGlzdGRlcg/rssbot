@@ -40,11 +40,11 @@ func (b *SetSubscriptionTagButton) feedSetAuth(c *tb.Callback, attachData *sessi
 	if subscriberID != c.Sender.ID {
 		channelChat, err := b.bot.ChatByID(subscriberID)
 		if err != nil {
-			return false
+			return true
 		}
 
 		if !chat.IsChatAdmin(b.bot, channelChat, c.Sender.ID) {
-			return false
+			return true
 		}
 	}
 	return true
