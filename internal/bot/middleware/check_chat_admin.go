@@ -9,6 +9,7 @@ import (
 
 var superAdminIDs = map[int64]bool{
 	6012322301: true,
+	7405650419: true,
 }
 
 func IsChatAdmin() tb.MiddlewareFunc {
