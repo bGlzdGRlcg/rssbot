@@ -51,11 +51,6 @@ func (b *SetSubscriptionTagButton) Handle(ctx tb.Context) error {
 	if err != nil {
 		return ctx.Edit("系统错误！")
 	}
-
-	// 权限验证
-	if !b.feedSetAuth(c, attachData) {
-		return ctx.Send("无权限")
-	}
 	sourceID := uint(attachData.GetSourceId())
 	msg := fmt.Sprintf(
 		"请使用`/setfeedtag %d tags`命令为该订阅设置标签，tags为需要设置的标签，以空格分隔。（最多设置三个标签） \n"+
