@@ -37,7 +37,7 @@ func (o *OnDocument) Description() string {
 
 func (o *OnDocument) getOPML(ctx tb.Context) (*opml.OPML, error) {
 	if !strings.HasSuffix(ctx.Message().Document.FileName, ".opml") {
-		return nil
+		return nil, errors.New("请发送正确的 OPML 文件")
 	}
 
 	fileRead, err := o.bot.File(&ctx.Message().Document.File)
