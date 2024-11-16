@@ -22,9 +22,6 @@ jobs:
         run: echo ::`echo -n name=BUILD_TIME`::$(date)
       - name: Environment Printer
         uses: managedkaos/print-env@v1.0
-        
-      - name: set env
-        run: CGO_ENABLED=1
 
       - uses: wangyoucao577/go-release-action@master
         with:
@@ -33,3 +30,4 @@ jobs:
           goarch: ${{ matrix.goarch }}
           build_flags: -v 
           ldflags: -X 'github.com/bGlzdGRlcg/rssbot/internal/config.commit=${{ github.sha }}' -X 'github.com/bGlzdGRlcg/rssbot/internal/config.date=${{ env.BUILD_TIME }}' -X 'github.com/bGlzdGRlcg/rssbot/internal/config.version=${{ env.APP_VERSION }}'
+          build_command: "CGO_ENABLED=1 go build -o rssbot"
