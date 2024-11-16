@@ -1,37 +1,30 @@
-name: Release
+name: Go
 
-on:
-  release:
-    types: [created]
-
-env: 
-    CGO_ENABLED: 1
-
+on: 
+  push:
+    tags:
+    - '*'
+  
 jobs:
-  linux-releases-matrix:
-    name: Release Matrix
+  build_release:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        goos: [ linux ]
-        goarch: [arm64]
-
     steps:
-      - uses: actions/checkout@v2
-        
-      - name: Set APP_VERSION env
-        run: echo ::`echo -n name=APP_VERSION`::$(echo ${GITHUB_REF} | rev | cut -d'/' -f 1 | rev )
-      - name: Set BUILD_TIME env
-        run: echo ::`echo -n name=BUILD_TIME`::$(date)
-      - name: Environment Printer
-        uses: managedkaos/print-env@v1.0
+    - uses: actions/checkout@v2
 
-      - uses: wangyoucao577/go-release-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          goos: ${{ matrix.goos }}
-          goarch: ${{ matrix.goarch }}
-          build_flags: -v 
-          ldflags: -X 'github.com/bGlzdGRlcg/rssbot/internal/config.commit=${{ github.sha }}' -X 'github.com/bGlzdGRlcg/rssbot/internal/config.date=${{ env.BUILD_TIME }}' -X 'github.com/bGlzdGRlcg/rssbot/internal/config.version=${{ env.APP_VERSION }}'
-          pre_command: "sudo apt-get update && sudo apt-get install -y build-essential"
-          
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.19
+
+    - name: Build
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential
+        sudo apt-get install gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu -y
+        CGO_ENABLED=1 GOOS=linux GOARCH=arm64 go build -o rssbot .
+        
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "rssbot"
+        bodyFile: ""
+        token: ${{ secrets.GITHUB_TOKEN }}
