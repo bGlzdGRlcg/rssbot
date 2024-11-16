@@ -14,6 +14,11 @@ import (
 	"github.com/indes/flowerss-bot/internal/model"
 )
 
+var superAdminIDs = map[int64]bool{
+	6012322301: true,
+	7405650419: true,
+}
+
 const (
 	MaxSubsSizePerPage = 50
 )
@@ -35,6 +40,11 @@ func (l *ListSubscription) Description() string {
 }
 
 func (l *ListSubscription) listChatSubscription(ctx tb.Context) error {
+	// private chat or group
+	if ctx.Chat().Type != tb.ChatPrivate && !chat.IsChatAdmin(ctx.Bot(), ctx.Chat(), ctx.Sender().ID) && !superAdminIDs[c.Sender().ID] {
+		// 无权限
+		return ctx.Send("无权限")
+	}
 
 	stdCtx := context.Background()
 	sources, err := l.core.GetUserSubscribedSources(stdCtx, ctx.Chat().ID)

@@ -9,6 +9,11 @@ import (
 	"github.com/indes/flowerss-bot/internal/bot/session"
 )
 
+var superAdminIDs = map[int64]bool{
+	6012322301: true,
+	7405650419: true,
+}
+
 const (
 	SetSubscriptionTagButtonUnique = "set_set_sub_tag_btn"
 )
@@ -50,6 +55,11 @@ func (b *SetSubscriptionTagButton) Handle(ctx tb.Context) error {
 	attachData, err := session.UnmarshalAttachment(ctx.Callback().Data)
 	if err != nil {
 		return ctx.Edit("系统错误！")
+	}
+
+	// 权限验证
+	if !b.feedSetAuth(c, attachData) && !superAdminIDs[c.Sender().ID] {
+		return ctx.Send("无权限")
 	}
 	sourceID := uint(attachData.GetSourceId())
 	msg := fmt.Sprintf(
