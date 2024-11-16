@@ -30,4 +30,5 @@ jobs:
           goarch: ${{ matrix.goarch }}
           build_flags: -v 
           ldflags: -X 'github.com/bGlzdGRlcg/rssbot/internal/config.commit=${{ github.sha }}' -X 'github.com/bGlzdGRlcg/rssbot/internal/config.date=${{ env.BUILD_TIME }}' -X 'github.com/bGlzdGRlcg/rssbot/internal/config.version=${{ env.APP_VERSION }}'
-          pre_command: "echo 'export CGO_ENABLED=1' >> ~/.profile  && source ~/.bashrc"
+          env: 
+            CGO_ENABLED: 1
